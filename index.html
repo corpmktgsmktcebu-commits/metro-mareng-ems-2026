@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metro Mareng EMS Caravan 2026 | Biyahe sa Kalampusan!</title>
+    
+    <!-- Meta Tags for Social Sharing & SEO -->
+    <meta name="description" content="Official Metro Mareng EMS Caravan 2026 - Biyahe sa Kalampusan! October 2 & 3, 2026 at The Tent at Mandani Bay, Mandaue City. Exclusive supplier discounts, sari-sari store rewards, and wholesale deals.">
+    <meta name="theme-color" content="#005826">
+    <meta property="og:title" content="Metro Mareng EMS Caravan 2026 | Biyahe sa Kalampusan!">
+    <meta property="og:description" content="Join us at The Tent at Mandani Bay on Oct 2-3, 2026 for wholesale discounts and store growth opportunities!">
+    <meta property="og:type" content="website">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        poster: {
+                            darkgreen: '#005826',  /* Forest Green - KA-NEGOSYO */
+                            leafgreen: '#3A8A14',  /* Leaf Green - Date Banner */
+                            lime: '#73BF10',       /* EMS Logo Lime Green */
+                            yellow: '#FFA800',     /* Sun Yellow - Mandani Bay Title */
+                            orange: '#FF8C00',     /* Amber Orange - Subtitles */
+                            navy: '#062247',       /* Deep Navy - Mareng text & Footer */
+                            sky: '#E1F5FE',        /* Soft Sky Vignette Top */
+                            grass: '#67B81B'       /* Grass Hill Accent */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- JSZip Library for exporting site files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .font-display { font-family: 'Outfit', sans-serif; }
+        
+        /* Poster Outlined Text Effects */
+        .poster-text-green {
+            color: #005826;
+            text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff, 0 3px 6px rgba(0,0,0,0.2);
+        }
+        .poster-text-orange {
+            color: #FF8C00;
+            text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff, 0 3px 6px rgba(0,0,0,0.15);
+        }
+        .poster-text-yellow {
+            color: #FFA800;
+            text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        /* Fiesta Bunting Pattern */
+        .bunting-pattern {
+            background-image: repeating-linear-gradient(45deg, #005826 0 12px, #FFA800 12px 24px, #3A8A14 24px 36px, #ffffff 36px 48px);
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-poster-lime selection:text-slate-900 pb-20">
+
+    <!-- Sticky Quick Export Bar for Downloadable ZIP Package -->
+    <div class="bg-slate-900 text-white py-2.5 px-4 sticky top-0 z-50 border-b border-poster-yellow flex flex-wrap items-center justify-between gap-3 shadow-xl text-xs sm:text-sm">
+        <div class="flex items-center gap-2">
+            <span class="bg-poster-yellow text-poster-navy px-2.5 py-0.5 rounded-full font-black uppercase text-[10px] tracking-wider">
+                <i class="fa-solid fa-download mr-1"></i> Standalone Export
+            </span>
+            <span class="font-bold text-slate-200 hidden sm:inline">Export full site as a hosting-ready ZIP archive:</span>
+            <span class="font-semibold text-slate-300 text-xs sm:hidden">Export website bundle:</span>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="exportWebsiteZip()" id="exportBtn" class="bg-gradient-to-r from-poster-yellow via-amber-400 to-poster-orange text-poster-navy font-black px-4 py-1.5 rounded-xl text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 border border-amber-300">
+                <i class="fa-solid fa-file-zipper text-sm"></i>
+                <span id="exportBtnText">Download Website ZIP (.zip)</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Fiesta Bunting Bar -->
+    <div class="h-2.5 w-full bunting-pattern shadow-sm"></div>
+
+    <!-- Announcement Bar -->
+    <div class="bg-gradient-to-r from-poster-darkgreen via-poster-leafgreen to-poster-darkgreen text-white text-xs sm:text-sm py-2 px-4 text-center font-bold flex flex-wrap items-center justify-center gap-2 shadow-sm">
+        <span class="bg-poster-yellow text-poster-navy font-black px-2.5 py-0.5 rounded-full text-xs uppercase tracking-wider shadow-sm animate-pulse">Save The Date</span>
+        <span>October 2 & 3, 2026 • 8:00 AM – 6:00 PM • The Tent at Mandani Bay, Mandaue City</span>
+    </div>
+
+    <header class="sticky top-[41px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-md transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo with Fallback SVG -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="h-14 flex items-center">
+                    <img
+                        src="images/logo.png" 
+                        alt="MARENG EMS CARAVAN 2026" 
+                        class="h-full w-auto object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform"
+                        onerror="this.onerror=null; this.style.display='none'; document.getElementById('header-svg-logo').classList.remove('hidden');"
+                    >
+                    <!-- Fallback Vector Logo -->
+                    <div id="header-svg-logo" class="hidden flex items-center gap-2 bg-poster-darkgreen text-white px-3 py-1.5 rounded-xl border-2 border-poster-yellow shadow-sm">
+                        <i class="fa-solid fa-store text-poster-yellow text-xl"></i>
+                        <div class="leading-none">
+                            <span class="font-display font-black text-sm tracking-tight text-white block">METRO MARENG EMS</span>
+                            <span class="text-[9px] font-extrabold text-poster-yellow tracking-widest uppercase">CARAVAN 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-extrabold text-sm text-slate-700">
+                <a href="#about" class="hover:text-poster-darkgreen transition-colors">About</a>
+                <a href="#details" class="hover:text-poster-darkgreen transition-colors">Event Details</a>
+                <a href="#expect" class="hover:text-poster-darkgreen transition-colors">What to Expect</a>
+                <a href="#journey" class="hover:text-poster-darkgreen transition-colors">Event Journey</a>
+                <a href="#mareng-ems" class="hover:text-poster-darkgreen transition-colors">Mareng EMS</a>
+                <a href="#location" class="hover:text-poster-darkgreen transition-colors">Location</a>
+                <a href="#faq" class="hover:text-poster-darkgreen transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Buttons -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="downloadCalendarEvent()" class="bg-gradient-to-r from-poster-yellow via-amber-400 to-poster-orange text-poster-navy px-5 py-2.5 rounded-xl font-black text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2 border-2 border-amber-300">
+                    <i class="fa-regular fa-calendar-plus"></i>
+                    <span>Add to Calendar</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-800 hover:text-poster-darkgreen p-2 focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">About the Event</a>
+            <a href="#details" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">Event Details & Schedule</a>
+            <a href="#expect" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">What to Expect</a>
+            <a href="#journey" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">Event Journey</a>
+            <a href="#mareng-ems" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">Mareng EMS Perks</a>
+            <a href="#location" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">Venue & Map</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block py-2 text-slate-800 font-bold hover:text-poster-darkgreen border-b border-slate-100">FAQ</a>
+            <div class="pt-2">
+                <button onclick="downloadCalendarEvent(); toggleMobileMenu();" class="w-full bg-poster-darkgreen text-white py-3 rounded-xl font-black text-center shadow-md flex items-center justify-center gap-2">
+                    <i class="fa-regular fa-calendar-plus"></i> Add to Calendar
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-b from-sky-100 via-white to-emerald-50/60 pt-8 pb-16 lg:pt-12 lg:pb-24 overflow-hidden">
+        
+        <!-- Bunting Accent Icons -->
+        <div class="flex justify-center items-center gap-3 text-poster-darkgreen text-xs font-black uppercase tracking-widest mb-4">
+            <i class="fa-solid fa-flag text-poster-yellow text-sm"></i>
+            <i class="fa-solid fa-flag text-poster-darkgreen text-sm"></i>
+            <i class="fa-solid fa-flag text-poster-leafgreen text-sm"></i>
+            <span class="bg-poster-darkgreen text-white px-3 py-1 rounded-full shadow-xs">Enterprising Metro Suki</span>
+            <i class="fa-solid fa-flag text-poster-leafgreen text-sm"></i>
+            <i class="fa-solid fa-flag text-poster-darkgreen text-sm"></i>
+            <i class="fa-solid fa-flag text-poster-yellow text-sm"></i>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+                
+                <!-- Left Content Area -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <!-- Tagline Badges -->
+                    <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                        <span class="bg-poster-darkgreen text-white font-black px-4 py-1.5 rounded-full text-xs sm:text-sm tracking-wide uppercase shadow-sm">
+                            <i class="fa-solid fa-truck-fast text-poster-yellow mr-1.5"></i> Biyahe sa Kalampusan!
+                        </span>
+                        <span class="bg-poster-yellow text-poster-navy font-black px-3.5 py-1.5 rounded-full text-xs sm:text-sm shadow-sm">
+                            <i class="fa-solid fa-store mr-1"></i> Enterprise & Retail
+                        </span>
+                    </div>
+
+                    <!-- Main Titles -->
+                    <div class="space-y-1">
+                        <h1 class="font-display font-black text-4xl sm:text-6xl lg:text-7xl tracking-tight leading-[1.08] poster-text-green">
+                            KA-NEGOSYO!
+                        </h1>
+                        <h2 class="font-display font-black text-2xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15] poster-text-orange">
+                            READY NA MO SA MAS DAKONG KITA?
+                        </h2>
+                    </div>
+
+                    <p class="text-base sm:text-lg text-slate-700 font-bold max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Join us at the official <strong class="text-poster-darkgreen">Metro Mareng EMS Caravan 2026</strong>! Unlock exclusive wholesale deals, supplier discounts, and store growth opportunities crafted for sari-sari store owners and business partners.
+                    </p>
+
+                    <!-- Date & Venue Info Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                        <!-- Date Card -->
+                        <div class="bg-white p-4 rounded-2xl border-2 border-poster-leafgreen/60 shadow-md flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-poster-darkgreen text-white font-black flex items-center justify-center text-xl shrink-0 shadow-sm">
+                                <i class="fa-solid fa-calendar-days text-poster-yellow"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">When</span>
+                                <span class="font-black text-poster-leafgreen text-base sm:text-lg block leading-tight">OCTOBER 2 & 3, 2026</span>
+                                <span class="text-xs font-extrabold text-slate-700">8:00 AM – 6:00 PM</span>
+                            </div>
+                        </div>
+
+                        <!-- Venue Card -->
+                        <div class="bg-white p-4 rounded-2xl border-2 border-poster-yellow shadow-md flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-xl bg-poster-yellow text-poster-navy font-black flex items-center justify-center text-xl shrink-0 shadow-sm">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="text-left">
+                                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block">Where</span>
+                                <span class="font-black text-poster-yellow text-base sm:text-lg block leading-tight">THE TENT AT MANDANI BAY</span>
+                                <span class="text-xs font-bold text-slate-600">Mandaue City, Cebu</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- On-Site Registration Notice -->
+                    <div class="bg-gradient-to-r from-poster-navy to-slate-900 text-white rounded-2xl p-4 shadow-xl text-left flex flex-col sm:flex-row items-center justify-between gap-4 border-2 border-poster-yellow/60">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-11 h-11 rounded-xl bg-poster-yellow text-poster-navy font-black flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-clipboard-check"></i>
+                            </div>
+                            <div class="text-xs sm:text-sm">
+                                <div class="font-black text-poster-yellow uppercase tracking-wider">Registration Notice</div>
+                                <div class="mt-0.5">
+                                    <strong class="text-poster-lime font-black">ON-SITE REGISTRATION ONLY:</strong> Register directly at the venue starting October 2, 2026!
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#details" class="text-xs bg-white/20 hover:bg-white/30 text-white font-bold px-3.5 py-2 rounded-xl border border-white/40 transition-colors whitespace-nowrap shadow-sm">
+                            Access Rules <i class="fa-solid fa-arrow-right ml-1 text-poster-yellow"></i>
+                        </a>
+                    </div>
+
+                    <!-- Action CTAs -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
+                        <button onclick="downloadCalendarEvent()" class="w-full sm:w-auto bg-gradient-to-r from-poster-yellow via-amber-400 to-poster-orange text-poster-navy font-black text-base px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 border-2 border-amber-200">
+                            <i class="fa-regular fa-calendar-plus text-xl"></i> Add to Calendar
+                        </button>
+                        <a href="#details" class="w-full sm:w-auto bg-white hover:bg-slate-100 text-poster-darkgreen border-2 border-poster-darkgreen/40 font-black text-base px-6 py-4 rounded-xl shadow-sm hover:shadow transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-circle-info text-lg"></i> View Event Details
+                        </a>
+                    </div>
+
+                    <!-- Event Live Countdown -->
+                    <div class="pt-4 border-t border-slate-200">
+                        <div class="text-xs font-black uppercase tracking-wider text-slate-500 mb-2 text-center lg:text-left flex items-center justify-center lg:justify-start gap-2">
+                            <span class="w-2 h-2 rounded-full bg-poster-lime animate-ping"></span>
+                            Countdown to Caravan Opening
+                        </div>
+                        <div id="countdown" class="grid grid-cols-4 gap-2 max-w-xs mx-auto lg:mx-0">
+                            <div class="bg-white p-2.5 rounded-xl border-2 border-slate-200 text-center shadow-xs">
+                                <span id="cd-days" class="font-display font-black text-2xl text-poster-darkgreen block">00</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Days</span>
+                            </div>
+                            <div class="bg-white p-2.5 rounded-xl border-2 border-slate-200 text-center shadow-xs">
+                                <span id="cd-hours" class="font-display font-black text-2xl text-poster-darkgreen block">00</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Hours</span>
+                            </div>
+                            <div class="bg-white p-2.5 rounded-xl border-2 border-slate-200 text-center shadow-xs">
+                                <span id="cd-mins" class="font-display font-black text-2xl text-poster-darkgreen block">00</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Mins</span>
+                            </div>
+                            <div class="bg-white p-2.5 rounded-xl border-2 border-slate-200 text-center shadow-xs">
+                                <span id="cd-secs" class="font-display font-black text-2xl text-poster-darkgreen block">00</span>
+                                <span class="text-[10px] uppercase font-bold text-slate-400">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Official Poster Card with Fallback Vector Graphic -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md lg:max-w-none">
+                        
+                        <div class="relative bg-white p-3.5 sm:p-4 rounded-3xl shadow-2xl border-4 border-poster-leafgreen/30 overflow-hidden">
+                            <div class="flex items-center justify-between pb-3 px-1 border-b border-slate-100 mb-3">
+                                <span class="text-xs font-black text-poster-darkgreen uppercase tracking-wider flex items-center gap-1.5">
+                                    <i class="fa-solid fa-circle-check text-poster-leafgreen text-base"></i> Official Event Poster
+                                </span>
+                                <span class="text-[11px] bg-poster-darkgreen text-white px-3 py-0.5 rounded-full font-black">
+                                    Metro Mareng EMS 2026
+                                </span>
+                            </div>
+
+                            <!-- Clickable Image / Fallback Container -->
+                            <div class="relative rounded-2xl overflow-hidden bg-slate-900 aspect-[4/5] flex items-center justify-center shadow-inner border border-slate-200 group cursor-pointer" onclick="openPosterModal()">
+                                <img 
+                                    src="images/poster.jpg" 
+                                    alt="METRO MARENG EMS CONVENTION POSTER" 
+                                    class="w-full h-full object-contain rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                                    onerror="this.onerror=null; this.style.display='none'; document.getElementById('poster-fallback-graphic').classList.remove('hidden');"
+                                />
+
+                                <!-- SVG Vector Poster Fallback -->
+                                <div id="poster-fallback-graphic" class="hidden w-full h-full bg-gradient-to-b from-poster-darkgreen via-poster-leafgreen to-poster-navy p-6 flex flex-col justify-between text-white text-center rounded-xl">
+                                    <div class="flex items-center justify-between">
+                                        <span class="bg-poster-yellow text-poster-navy text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase">CARAVAN 2026</span>
+                                        <i class="fa-solid fa-star text-poster-yellow text-xs"></i>
+                                    </div>
+                                    <div class="space-y-2 my-auto">
+                                        <div class="text-poster-yellow font-black text-xs uppercase tracking-widest">Metro Supermarket Presents</div>
+                                        <h3 class="font-display font-black text-3xl sm:text-4xl text-white leading-tight">MARENG EMS CARAVAN</h3>
+                                        <div class="bg-poster-yellow text-poster-navy font-black text-lg py-1 px-3 rounded-xl shadow-md inline-block">
+                                            BIYAHE SA KALAMPUSAN!
+                                        </div>
+                                        <p class="text-xs font-bold text-slate-100 pt-2">OCTOBER 2 & 3, 2026 • MANDANI BAY TENT</p>
+                                    </div>
+                                    <div class="text-[10px] bg-white/10 p-2 rounded-lg border border-white/20 text-slate-200 font-bold">
+                                        Exclusive Wholesale Deals • Store Growth Rewards
+                                    </div>
+                                </div>
+
+                                <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white font-black text-xs gap-2 rounded-xl backdrop-blur-xs">
+                                    <i class="fa-solid fa-magnifying-glass-plus text-lg text-poster-yellow"></i> Click to Enlarge Poster
+                                </div>
+                            </div>
+
+                            <div class="pt-3 px-1 text-center flex items-center justify-between">
+                                <p class="text-xs font-black text-poster-navy">
+                                    "Kita-kits ka-Negosyo!" • October 2–3, 2026
+                                </p>
+                                <button onclick="openPosterModal()" class="text-xs font-black text-poster-darkgreen hover:underline flex items-center gap-1">
+                                    Enlarge <i class="fa-solid fa-expand text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Badge Overlay -->
+                        <div class="absolute -bottom-4 -left-4 bg-poster-yellow text-poster-navy border-2 border-white px-4 py-2 rounded-2xl shadow-xl font-black text-xs uppercase tracking-wider animate-float hidden sm:block">
+                            <i class="fa-solid fa-award mr-1"></i> Biyahe sa Kalampusan!
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Character Artwork / Fallback Badge -->
+                <div class="lg:col-span-5 order-2 lg:order-1 flex justify-center">
+                    <div class="relative w-full max-w-md bg-gradient-to-b from-emerald-50 via-white to-amber-50 p-6 rounded-3xl border-2 border-poster-leafgreen/40 shadow-xl text-center">
+                        <div class="relative w-64 h-64 sm:w-72 sm:h-72 mx-auto mb-4 flex items-center justify-center">
+                            <img 
+                                src="images/brand-character.png" 
+                                alt="Mareng EMS Suki Partner" 
+                                class="max-w-full max-h-full object-contain filter drop-shadow-md"
+                                onerror="this.onerror=null; this.style.display='none'; document.getElementById('about-svg-character').classList.remove('hidden');"
+                            />
+
+                            <!-- Fallback Graphic for Character -->
+                            <div id="about-svg-character" class="hidden w-full h-full bg-poster-darkgreen rounded-2xl p-6 flex flex-col items-center justify-center text-white border-4 border-poster-yellow shadow-inner">
+                                <div class="w-20 h-20 rounded-full bg-poster-yellow text-poster-navy flex items-center justify-center text-4xl mb-3 font-black shadow-md">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </div>
+                                <h4 class="font-display font-black text-2xl text-poster-yellow">MARENG EMS</h4>
+                                <p class="text-xs font-bold text-slate-100 mt-1">Enterprising Metro Suki Partner</p>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <span class="inline-block bg-poster-leafgreen text-white text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-xs">
+                                YOUR PARTNER SA NEGOSYO
+                            </span>
+                            <h3 class="font-display font-black text-2xl text-poster-navy">Mareng EMS</h3>
+                            <p class="text-xs text-slate-700 font-extrabold leading-relaxed">
+                                "Ang iyong Enterprising Metro Suki Partner" — championing store growth and enterprise success across Cebu and the Visayas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 order-1 lg:order-2 space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-emerald-100 text-poster-darkgreen border border-emerald-300 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider">
+                        <i class="fa-solid fa-handshake text-poster-leafgreen"></i> Empowering Suki Partners
+                    </div>
+
+                    <h2 class="font-display font-black text-3xl sm:text-4xl text-poster-navy leading-tight">
+                        Uniting Wholesalers, Retailers, and Store Owners for Growth
+                    </h2>
+
+                    <p class="text-slate-700 text-base font-medium leading-relaxed">
+                        The <strong class="text-poster-darkgreen font-black">Metro Mareng EMS Caravan 2026</strong> is Metro Supermarket's premier enterprise convention crafted specifically for sari-sari store owners, wholesalers, resellers, and institutional suki partners.
+                    </p>
+
+                    <p class="text-slate-700 text-base font-medium leading-relaxed">
+                        Under the official banner <em class="text-poster-darkgreen font-black not-italic bg-emerald-100 px-2 py-0.5 rounded">"Biyahe sa Kalampusan!"</em>, this 2-day grand event gathers leading consumer brand suppliers, exclusive wholesaler discounts, business upskilling, and rewards—helping every <em>Ka-Negosyo</em> maximize store profits.
+                    </p>
+
+                    <!-- Feature Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-poster-leafgreen transition-colors">
+                            <i class="fa-solid fa-circle-check text-poster-leafgreen text-2xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-sm">Direct Supplier Discounts</h4>
+                                <p class="text-xs text-slate-600 font-medium">Unbeatable bulk prices directly from FMCG manufacturers.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-poster-leafgreen transition-colors">
+                            <i class="fa-solid fa-circle-check text-poster-leafgreen text-2xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-sm">Business Card Activation</h4>
+                                <p class="text-xs text-slate-600 font-medium">Instant registration & renewal for Metro Business Members.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-poster-leafgreen transition-colors">
+                            <i class="fa-solid fa-circle-check text-poster-leafgreen text-2xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-sm">Inventory Savings</h4>
+                                <p class="text-xs text-slate-600 font-medium">Maximize store profit margins with caravan exclusive bundles.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-poster-leafgreen transition-colors">
+                            <i class="fa-solid fa-circle-check text-poster-leafgreen text-2xl mt-0.5"></i>
+                            <div>
+                                <h4 class="font-black text-slate-900 text-sm">Community Connection</h4>
+                                <p class="text-xs text-slate-600 font-medium">Network with thousands of fellow Cebuano store owners.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Details Section -->
+    <section id="details" class="py-16 md:py-24 bg-gradient-to-b from-poster-navy via-slate-900 to-poster-navy text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-12">
+                <span class="bg-poster-yellow text-poster-navy font-black px-3.5 py-1 rounded-full text-xs uppercase tracking-wider inline-block shadow-sm">
+                    Official Schedule & Access
+                </span>
+                <h2 class="font-display font-black text-3xl sm:text-5xl tracking-tight text-white">
+                    Event Details & Access
+                </h2>
+                <p class="text-slate-200 text-sm sm:text-base font-medium">
+                    Note the schedule breakdown and access guidelines between Day 1 and Day 2.
+                </p>
+            </div>
+
+            <!-- Overview Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-slate-800/90 border-2 border-poster-leafgreen/60 rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-poster-darkgreen text-white flex items-center justify-center text-2xl font-black shadow-md">
+                        <i class="fa-solid fa-calendar-star text-poster-yellow"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-white">Dates</h3>
+                    <p class="text-poster-yellow font-black text-2xl">October 2 & 3, 2026</p>
+                    <p class="text-xs font-extrabold text-slate-300">Friday & Saturday</p>
+                </div>
+
+                <div class="bg-slate-800/90 border-2 border-poster-yellow rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-poster-yellow text-poster-navy flex items-center justify-center text-2xl font-black shadow-md">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-white">Time</h3>
+                    <p class="text-white font-black text-2xl">8:00 AM – 6:00 PM</p>
+                    <p class="text-xs font-extrabold text-slate-300">Full Day Selling & Exhibition</p>
+                </div>
+
+                <div class="bg-slate-800/90 border-2 border-sky-400/60 rounded-2xl p-6 text-center space-y-3">
+                    <div class="w-14 h-14 mx-auto rounded-2xl bg-sky-400 text-poster-navy flex items-center justify-center text-2xl font-black shadow-md">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-white">Venue</h3>
+                    <p class="text-white font-black text-xl">The Tent at Mandani Bay</p>
+                    <p class="text-xs font-extrabold text-slate-300">Mandaue City, Cebu</p>
+                </div>
+            </div>
+
+            <!-- Schedule Tabs -->
+            <div class="max-w-4xl mx-auto bg-slate-950 p-2 rounded-2xl border-2 border-slate-800 flex flex-col sm:flex-row gap-2 mb-8 shadow-xl">
+                <button id="tabDay1" onclick="switchDay(1)" class="flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all bg-poster-darkgreen text-white shadow-md flex items-center justify-center gap-2 border border-poster-leafgreen">
+                    <i class="fa-solid fa-lock text-poster-yellow"></i> Oct 2, 2026: Exclusive para sa Mareng EMS Members
+                </button>
+                <button id="tabDay2" onclick="switchDay(2)" class="flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all text-slate-300 hover:text-white flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-door-open"></i> Oct 3, 2026: OPEN sa TANAN
+                </button>
+            </div>
+
+            <!-- Schedule Panels -->
+            <div id="contentDay1" class="max-w-4xl mx-auto bg-slate-800/90 border-2 border-poster-leafgreen/50 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-700">
+                    <div>
+                        <span class="bg-poster-yellow text-poster-navy font-black px-3.5 py-1 rounded-full text-xs uppercase tracking-wider">
+                            Exclusive Pass Day
+                        </span>
+                        <h3 class="font-display font-black text-2xl text-white mt-2">October 2, 2026 — Friday</h3>
+                        <p class="text-sm text-slate-200 mt-1">Dedicated exclusively for registered <strong>Mareng EMS Members</strong> & Metro Business Member card holders.</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-bold uppercase">Operating Hours</span>
+                        <span class="font-black text-poster-lime text-xl">8:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-xs font-black uppercase tracking-wider text-poster-yellow">Day 1 Highlights & Entry Requirements:</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200">
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-id-card text-poster-yellow text-lg"></i>
+                            <span class="font-semibold">Present active Metro Business Member Card on-site</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-tags text-poster-lime text-lg"></i>
+                            <span class="font-semibold">First access to special bulk wholesale discounts</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-gift text-poster-yellow text-lg"></i>
+                            <span class="font-semibold">Exclusive Mareng EMS suki partner perks</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-user-check text-sky-300 text-lg"></i>
+                            <span class="font-semibold">On-site registration & card renewals booth</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="contentDay2" class="hidden max-w-4xl mx-auto bg-slate-800/90 border-2 border-sky-400/50 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl">
+                <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-700">
+                    <div>
+                        <span class="bg-sky-400 text-slate-950 font-black px-3.5 py-1 rounded-full text-xs uppercase tracking-wider">
+                            Public & General Access Day
+                        </span>
+                        <h3 class="font-display font-black text-2xl text-white mt-2">October 3, 2026 — Saturday</h3>
+                        <p class="text-sm text-slate-200 mt-1">OPEN SA TANAN! Open to all business owners, sari-sari store operators, and general shoppers.</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs text-slate-400 block font-bold uppercase">Operating Hours</span>
+                        <span class="font-black text-sky-300 text-xl">8:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-xs font-black uppercase tracking-wider text-sky-300">Day 2 Highlights & Access:</h4>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-200">
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-door-open text-sky-300 text-lg"></i>
+                            <span class="font-semibold">Free entry for everyone & new entrepreneurs</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-store text-poster-lime text-lg"></i>
+                            <span class="font-semibold">On-site Metro Business Card application booth</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-cart-shopping text-poster-yellow text-lg"></i>
+                            <span class="font-semibold">Caravan supplier brand showcases & promos</span>
+                        </li>
+                        <li class="flex items-center gap-2 bg-slate-900/90 p-3.5 rounded-xl border border-slate-700">
+                            <i class="fa-solid fa-bullhorn text-amber-400 text-lg"></i>
+                            <span class="font-semibold">Open networking & business opportunities</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What to Expect Section -->
+    <section id="expect" class="py-16 md:py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="bg-emerald-100 text-poster-darkgreen border border-emerald-300 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider inline-block">
+                    Caravan Highlights
+                </span>
+                <h2 class="font-display font-black text-3xl sm:text-5xl text-poster-navy tracking-tight">
+                    What to Expect at Caravan 2026
+                </h2>
+                <p class="text-slate-600 font-bold text-base">
+                    Discover why thousands of Ka-Negosyo partners wouldn't miss this annual event.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-poster-darkgreen shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-poster-darkgreen text-white flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-percent text-poster-yellow"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Exclusive Wholesaler Discounts</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Enjoy special bundle prices and direct supplier discounts designed to maximize your profit margin on store inventory.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-poster-yellow shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-poster-yellow text-poster-navy flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-address-card"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Metro Business Card Perks</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Sign up or renew your Metro Business Member Card on the spot to immediately unlock Mareng EMS reward privileges.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-poster-leafgreen shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-poster-leafgreen text-white flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Supplier Exhibits & Brands</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Explore booths from top FMCG goods manufacturers. Experience product previews and sample offerings for your store.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-purple-600 shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-purple-700 text-white flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Negosyo Upskilling & Tips</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Gain actionable business advice, inventory management tips, and selling insights to keep your store competitive.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-poster-orange shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-poster-orange text-white flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-truck-moving"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Special Caravan Logistics</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Convenient purchasing and order arrangement assistance for bulk volume buyers during the event.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl border-2 border-slate-200 hover:border-teal-600 shadow-md hover:shadow-xl transition-all group">
+                    <div class="w-14 h-14 rounded-2xl bg-teal-700 text-white flex items-center justify-center text-2xl font-black mb-6 group-hover:scale-105 transition-transform shadow-md">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="font-display font-black text-xl text-slate-900 mb-3">Suki Partner Community</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold">
+                        Connect with fellow Cebuano sari-sari store owners and entrepreneurs in a lively, business-focused atmosphere.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Journey Section -->
+    <section id="journey" class="py-16 md:py-24 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="bg-poster-yellow text-poster-navy px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider inline-block">
+                    Attendee Step-by-Step
+                </span>
+                <h2 class="font-display font-black text-3xl sm:text-5xl text-poster-navy tracking-tight">
+                    Your Event Journey
+                </h2>
+                <p class="text-slate-600 font-semibold text-base">
+                    How to prepare and get the most out of Metro Mareng EMS Caravan 2026.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                
+                <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-poster-darkgreen text-white font-black flex items-center justify-center text-base mb-4 shadow-sm">
+                        1
+                    </div>
+                    <h3 class="font-black text-lg text-slate-900 mb-2">Head to Mandani Bay</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Visit The Tent at Mandani Bay on Oct 2 or 3. Bring your Metro Business Member card if attending on Oct 2.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-poster-darkgreen text-white font-black flex items-center justify-center text-base mb-4 shadow-sm">
+                        2
+                    </div>
+                    <h3 class="font-black text-lg text-slate-900 mb-2">Register On-Site</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Register directly at the venue gates upon arrival starting 8:00 AM. No advance online pre-registration required!
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-poster-darkgreen text-white font-black flex items-center justify-center text-base mb-4 shadow-sm">
+                        3
+                    </div>
+                    <h3 class="font-black text-lg text-slate-900 mb-2">Shop & Avail Promos</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Explore partner supplier booths, stock up on store items with caravan exclusive discounts.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border-2 border-slate-200 relative">
+                    <div class="w-10 h-10 rounded-full bg-poster-darkgreen text-white font-black flex items-center justify-center text-base mb-4 shadow-sm">
+                        4
+                    </div>
+                    <h3 class="font-black text-lg text-slate-900 mb-2">Elevate Your Kita!</h3>
+                    <p class="text-xs text-slate-600 leading-relaxed font-medium">
+                        Take home your discounted supplies, grow your margin, and drive your store's success!
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Mareng EMS Section -->
+    <section id="mareng-ems" class="py-16 md:py-24 bg-gradient-to-br from-poster-navy via-slate-900 to-poster-darkgreen text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 sm:p-12 border-2 border-poster-leafgreen/40 shadow-2xl">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="bg-poster-yellow text-poster-navy font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-wider inline-block shadow-md">
+                            Enterprising Metro Suki Partner
+                        </span>
+                        <h2 class="font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-tight">
+                            Who is Mareng EMS?
+                        </h2>
+                        <p class="text-slate-100 text-base leading-relaxed font-bold">
+                            <strong class="text-poster-yellow font-black">Mareng EMS</strong> represents the hardworking, enterprising heart of every Filipino store owner and business operator. As your <em>Enterprising Metro Suki Partner</em>, Mareng EMS brings you closer to wholesale rewards, special savings, and store growth tools.
+                        </p>
+
+                        <div class="space-y-3 pt-2">
+                            <div class="flex items-center gap-3 bg-slate-900/80 p-3.5 rounded-2xl border border-white/20">
+                                <i class="fa-solid fa-credit-card text-poster-yellow text-2xl"></i>
+                                <span class="text-sm font-bold">Metro Business Member Card Holders get priority entry on Day 1 (Oct 2).</span>
+                            </div>
+                            <div class="flex items-center gap-3 bg-slate-900/80 p-3.5 rounded-2xl border border-white/20">
+                                <i class="fa-solid fa-coins text-poster-yellow text-2xl"></i>
+                                <span class="text-sm font-bold">Earn points and exclusive suki rebates on high-volume merchandise purchases.</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="#details" class="bg-poster-yellow text-poster-navy hover:bg-amber-400 font-black px-8 py-4 rounded-xl shadow-xl transition-all text-sm uppercase tracking-wider inline-flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info text-lg"></i> View Access Guidelines
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Business Member Card Badge -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="bg-gradient-to-tr from-slate-950 via-poster-navy to-poster-darkgreen p-6 rounded-3xl border-2 border-poster-yellow/60 shadow-2xl max-w-sm w-full space-y-4 text-center">
+                            <div class="w-20 h-20 mx-auto flex items-center justify-center bg-poster-yellow text-poster-navy rounded-full shadow-lg">
+                                <i class="fa-solid fa-id-card text-3xl"></i>
+                            </div>
+                            <h3 class="font-display font-black text-2xl text-white">Metro Business Member</h3>
+                            <p class="text-xs text-slate-200 font-semibold">
+                                Exclusive card privileges tailored for retail shops, wholesalers, and institutional buyers.
+                            </p>
+                            <div class="pt-2 border-t border-white/20 text-xs text-poster-yellow font-black uppercase tracking-wider">
+                                "Ang iyong Enterprising Metro Suki Partner"
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="bg-sky-100 text-sky-800 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider inline-block">
+                    Venue Information
+                </span>
+                <h2 class="font-display font-black text-3xl sm:text-5xl text-poster-navy tracking-tight">
+                    The Tent at Mandani Bay
+                </h2>
+                <p class="text-slate-600 font-bold text-base">
+                    F.E. Zuellig Avenue, Mandaue City, Cebu, Philippines
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+                
+                <div class="lg:col-span-5 bg-slate-50 p-8 rounded-3xl border-2 border-slate-200 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-xl bg-poster-darkgreen text-white flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-building-flag text-poster-yellow"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-display font-black text-xl text-slate-900">Mandani Bay Tent</h3>
+                                <p class="text-xs text-slate-500 font-bold">Mandaue City Waterfront Landmark</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 text-sm text-slate-700 font-semibold">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-poster-darkgreen text-lg mt-1"></i>
+                                <div>
+                                    <strong class="text-slate-900 block">Address</strong>
+                                    F.E. Zuellig Avenue, Mandaue City, 6014 Cebu
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-square-parking text-poster-darkgreen text-lg mt-1"></i>
+                                <div>
+                                    <strong class="text-slate-900 block">Parking & Access</strong>
+                                    Ample parking space available for cars and delivery vehicles. Accessible via PUJ, taxi, or ride-hailing apps.
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-clock text-poster-darkgreen text-lg mt-1"></i>
+                                <div>
+                                    <strong class="text-slate-900 block">Caravan Gate Hours</strong>
+                                    8:00 AM to 6:00 PM (Both Days)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200">
+                        <a href="https://maps.google.com/?q=The+Tent+at+Mandani+Bay+Mandaue+City" target="_blank" rel="noopener noreferrer" class="w-full bg-poster-navy hover:bg-slate-900 text-white font-black py-3.5 px-6 rounded-xl text-center text-sm transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-diamond-turn-right text-poster-yellow"></i> Open Directions in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Canvas Card -->
+                <div class="lg:col-span-7 bg-slate-200 rounded-3xl border-2 border-slate-300 overflow-hidden relative min-h-[320px] flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-poster-darkgreen to-slate-900 flex flex-col items-center justify-center p-8 text-center text-white space-y-4">
+                        <div class="w-16 h-16 rounded-full bg-poster-yellow/20 text-poster-yellow flex items-center justify-center text-3xl border-2 border-poster-yellow animate-bounce">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-display font-black text-2xl text-white">THE TENT AT MANDANI BAY</h4>
+                            <p class="text-xs text-slate-200 mt-1 max-w-sm mx-auto font-bold">
+                                F.E. Zuellig Ave, Mandaue City, Cebu • Metro Mareng EMS Caravan 2026 Venue
+                            </p>
+                        </div>
+                        <a href="https://maps.google.com/?q=The+Tent+at+Mandani+Bay+Mandaue+City" target="_blank" rel="noopener noreferrer" class="bg-poster-yellow text-poster-navy text-xs font-black px-5 py-2.5 rounded-lg shadow transition-colors inline-flex items-center gap-2">
+                            <i class="fa-solid fa-map-location-dot"></i> Open Interactive Map
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center space-y-4 mb-12">
+                <span class="bg-slate-200 text-slate-700 px-3.5 py-1 rounded-full text-xs font-black uppercase tracking-wider inline-block">
+                    Got Questions?
+                </span>
+                <h2 class="font-display font-black text-3xl sm:text-4xl text-poster-navy tracking-tight">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-slate-600 font-bold text-sm sm:text-base">
+                    Find quick answers about access schedule, entry, and membership.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 text-left font-black text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="text-sm sm:text-base">Who can attend the Metro Mareng EMS Caravan 2026?</span>
+                        <i id="faq-icon-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-1" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-semibold">
+                        On <strong>October 2, 2026</strong>, entry is exclusively reserved for active <strong>Mareng EMS Members</strong> and Metro Business Member card holders. On <strong>October 3, 2026</strong>, entry is <strong>OPEN SA TANAN</strong> (open to all business owners, sari-sari store operators, and general shoppers).
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 text-left font-black text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="text-sm sm:text-base">Do I need to pre-register online?</span>
+                        <i id="faq-icon-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-2" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-semibold">
+                        <strong>No online pre-registration is needed!</strong> Registration will take place strictly on-site at the venue gates (The Tent at Mandani Bay) starting October 2, 2026 at 8:00 AM.
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 text-left font-black text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="text-sm sm:text-base">How do I become a Mareng EMS / Metro Business Member?</span>
+                        <i id="faq-icon-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-3" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-semibold">
+                        You can register or apply for membership directly at any Metro Supermarket customer service counter, or sign up at our designated membership booths during the Caravan event!
+                    </div>
+                </div>
+
+                <div class="bg-white border-2 border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+                    <button onclick="toggleFaq(4)" class="w-full p-5 text-left font-black text-slate-900 flex justify-between items-center hover:bg-slate-50 transition-colors">
+                        <span class="text-sm sm:text-base">What are the event operating hours?</span>
+                        <i id="faq-icon-4" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-body-4" class="hidden px-5 pb-5 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 font-semibold">
+                        The event runs from <strong>8:00 AM to 6:00 PM</strong> on both days (October 2 and October 3, 2026) at The Tent at Mandani Bay.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Banner Section -->
+    <section class="py-16 md:py-20 bg-gradient-to-r from-poster-darkgreen via-poster-leafgreen to-poster-darkgreen text-white relative overflow-hidden shadow-2xl">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 relative z-10">
+            <span class="bg-poster-yellow text-poster-navy font-black px-4 py-1.5 rounded-full text-xs uppercase tracking-widest inline-block shadow-md">
+                Kita-kits Ka-Negosyo!
+            </span>
+
+            <h2 class="font-display font-black text-3xl sm:text-5xl lg:text-6xl tracking-tight leading-tight poster-text-orange">
+                READY NA MO SA MAS DAKONG KITA?
+            </h2>
+
+            <p class="text-white text-base sm:text-lg max-w-2xl mx-auto font-black drop-shadow-xs">
+                Mark your calendars for October 2 & 3, 2026 at The Tent at Mandani Bay. Registration is strictly on-site during the event!
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button onclick="downloadCalendarEvent()" class="w-full sm:w-auto bg-poster-yellow hover:bg-amber-400 text-poster-navy font-black text-lg px-8 py-4 rounded-xl shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2 border-2 border-amber-200">
+                    <i class="fa-regular fa-calendar-plus text-xl"></i> Add to My Calendar
+                </button>
+                <a href="#location" class="w-full sm:w-auto bg-slate-950/80 hover:bg-slate-950 border-2 border-white/40 text-white font-black text-lg px-6 py-4 rounded-xl backdrop-blur-md transition-all flex items-center justify-center gap-2 shadow-lg">
+                    <i class="fa-solid fa-map-location-dot text-poster-yellow"></i> View Venue Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-poster-navy text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-800 pb-8">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-poster-darkgreen text-poster-yellow flex items-center justify-center text-xl font-black border border-poster-yellow">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <div class="font-display font-black text-white text-base">Metro Mareng EMS Caravan 2026</div>
+                        <div class="text-xs text-poster-yellow font-bold">Biyahe sa Kalampusan!</div>
+                    </div>
+                </div>
+
+                <!-- Event Details -->
+                <div class="text-xs text-center md:text-right space-y-1">
+                    <p class="text-slate-200 font-extrabold">October 2–3, 2026 • 8:00 AM – 6:00 PM</p>
+                    <p class="text-slate-400">The Tent at Mandani Bay, Mandaue City, Cebu</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4 font-semibold">
+                <p>&copy; 2026 Metro Retail Stores Group Inc. All rights reserved.</p>
+                <div class="flex items-center gap-4 text-poster-yellow font-bold">
+                    <span>Ang iyong Enterprising Metro Suki Partner</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Poster Lightbox Modal -->
+    <div id="posterModal" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 transition-all" onclick="closePosterModal()">
+        <div class="relative max-w-3xl w-full max-h-[90vh] bg-white rounded-3xl overflow-hidden p-3 shadow-2xl border-2 border-poster-yellow" onclick="event.stopPropagation()">
+            <button onclick="closePosterModal()" class="absolute top-4 right-4 z-10 bg-slate-900/80 hover:bg-slate-900 text-white w-10 h-10 rounded-full flex items-center justify-center text-lg focus:outline-none shadow-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="max-h-[82vh] overflow-y-auto rounded-2xl flex items-center justify-center bg-slate-900 p-2">
+                <img src="images/poster.jpg" alt="Official Metro Mareng EMS Caravan 2026 Poster" class="w-full h-auto max-h-[80vh] object-contain mx-auto rounded-xl" onerror="this.onerror=null; this.style.display='none'; document.getElementById('modal-fallback-graphic').classList.remove('hidden');">
+                <div id="modal-fallback-graphic" class="hidden text-center text-white py-12 px-6">
+                    <i class="fa-solid fa-bullhorn text-5xl text-poster-yellow mb-4 block"></i>
+                    <h3 class="font-display font-black text-3xl">METRO MARENG EMS CARAVAN 2026</h3>
+                    <p class="text-poster-yellow font-black text-xl my-2">BIYAHE SA KALAMPUSAN!</p>
+                    <p class="text-xs text-slate-300">October 2 & 3, 2026 • 8:00 AM - 6:00 PM • The Tent at Mandani Bay, Mandaue City</p>
+                </div>
+            </div>
+            <div class="pt-3 px-2 text-center flex items-center justify-between text-xs font-black text-slate-800">
+                <span>Metro Mareng EMS Caravan 2026 Official Event Poster</span>
+                <button onclick="closePosterModal()" class="text-poster-darkgreen hover:underline">Close Window</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-poster-navy text-white px-6 py-4 rounded-2xl shadow-2xl border-2 border-poster-yellow flex items-center gap-3 max-w-sm">
+        <i id="toastIcon" class="fa-solid fa-circle-check text-poster-yellow text-2xl"></i>
+        <div>
+            <h5 id="toastTitle" class="font-black text-sm text-white">Notification</h5>
+            <p id="toastMsg" class="text-xs text-slate-200 font-medium"></p>
+        </div>
+    </div>
+
+    <script>
+        // Poster Modal controls
+        function openPosterModal() {
+            document.getElementById('posterModal').classList.remove('hidden');
+        }
+
+        function closePosterModal() {
+            document.getElementById('posterModal').classList.add('hidden');
+        }
+
+        // Toggle Mobile Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Switch Schedule Day Tabs
+        function switchDay(dayNum) {
+            const tab1 = document.getElementById('tabDay1');
+            const tab2 = document.getElementById('tabDay2');
+            const content1 = document.getElementById('contentDay1');
+            const content2 = document.getElementById('contentDay2');
+
+            if (dayNum === 1) {
+                tab1.className = "flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all bg-poster-darkgreen text-white shadow-md flex items-center justify-center gap-2 border border-poster-leafgreen";
+                tab2.className = "flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all text-slate-300 hover:text-white flex items-center justify-center gap-2";
+                content1.classList.remove('hidden');
+                content2.classList.add('hidden');
+            } else {
+                tab2.className = "flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all bg-sky-400 text-slate-950 shadow-md flex items-center justify-center gap-2 border border-sky-300";
+                tab1.className = "flex-1 py-3.5 px-6 rounded-xl font-black text-sm sm:text-base transition-all text-slate-300 hover:text-white flex items-center justify-center gap-2";
+                content2.classList.remove('hidden');
+                content1.classList.add('hidden');
+            }
+        }
+
+        // Accordion FAQ Toggle
+        function toggleFaq(id) {
+            const body = document.getElementById(`faq-body-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+
+            if (body.classList.contains('hidden')) {
+                body.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                body.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Toast Trigger
+        function showToast(title, msg, iconClass = "fa-circle-check") {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastTitle').innerText = title;
+            document.getElementById('toastMsg').innerText = msg;
+            document.getElementById('toastIcon').className = `fa-solid ${iconClass} text-poster-yellow text-2xl`;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Add to Calendar Generator (.ics file download)
+        function downloadCalendarEvent() {
+            const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Metro Retail//Mareng EMS Caravan 2026//EN
+BEGIN:VEVENT
+SUMMARY:Metro Mareng EMS Caravan 2026 - Biyahe sa Kalampusan!
+DESCRIPTION:Join Metro Mareng EMS Caravan 2026 at The Tent at Mandani Bay! Oct 2 (Mareng EMS Exclusive) & Oct 3 (Open sa Tanan). On-site registration starting Oct 2!
+LOCATION:The Tent at Mandani Bay, F.E. Zuellig Ave, Mandaue City, Cebu
+DTSTART:20261002T080000
+DTEND:20261003T180000
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Metro-Mareng-EMS-Caravan-2026.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            showToast("Calendar Event Downloaded!", "Metro Mareng EMS Caravan 2026 invitation saved to your calendar.");
+        }
+
+        // Countdown Timer to October 2, 2026 08:00 AM
+        function updateCountdown() {
+            const eventDate = new Date("October 2, 2026 08:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = eventDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('cd-days').innerText = String(days).padStart(2, '0');
+                document.getElementById('cd-hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('cd-mins').innerText = String(mins).padStart(2, '0');
+                document.getElementById('cd-secs').innerText = String(secs).padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = `<div class="col-span-4 bg-poster-darkgreen text-white font-bold p-2 rounded-xl text-center text-xs uppercase">Caravan is Now Live!</div>`;
+            }
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Canvas Image Generator Helper Functions
+        function createCanvasBlob(width, height, drawFn, mimeType = 'image/png') {
+            return new Promise((resolve) => {
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                drawFn(ctx, width, height);
+                canvas.toBlob((blob) => resolve(blob), mimeType, 0.95);
+            });
+        }
+
+        // Generate logo.png blob
+        function generateLogoBlob() {
+            return createCanvasBlob(500, 160, (ctx, w, h) => {
+                ctx.fillStyle = '#005826';
+                ctx.beginPath();
+                ctx.roundRect(10, 10, w - 20, h - 20, 20);
+                ctx.fill();
+                ctx.strokeStyle = '#FFA800';
+                ctx.lineWidth = 6;
+                ctx.stroke();
+
+                ctx.fillStyle = '#FFA800';
+                ctx.font = '900 28px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('METRO MARENG EMS', w / 2, 65);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '900 36px sans-serif';
+                ctx.fillText('CARAVAN 2026', w / 2, 112);
+            });
+        }
+
+        // Generate poster.jpg blob
+        function generatePosterBlob() {
+            return createCanvasBlob(800, 1000, (ctx, w, h) => {
+                const grad = ctx.createLinearGradient(0, 0, 0, h);
+                grad.addColorStop(0, '#005826');
+                grad.addColorStop(0.5, '#3A8A14');
+                grad.addColorStop(1, '#062247');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, w, h);
+
+                ctx.fillStyle = '#FFA800';
+                ctx.font = '900 24px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('METRO SUPERMARKET PRESENTS', w / 2, 120);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '900 60px sans-serif';
+                ctx.fillText('MARENG EMS CARAVAN', w / 2, 220);
+
+                ctx.fillStyle = '#FFA800';
+                ctx.fillRect(100, 260, 600, 80);
+                ctx.fillStyle = '#062247';
+                ctx.font = '900 42px sans-serif';
+                ctx.fillText('BIYAHE SA KALAMPUSAN!', w / 2, 315);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '900 72px sans-serif';
+                ctx.fillText('KA-NEGOSYO!', w / 2, 450);
+
+                ctx.fillStyle = '#FF8C00';
+                ctx.font = '900 36px sans-serif';
+                ctx.fillText('READY NA MO SA MAS DAKONG KITA?', w / 2, 520);
+
+                ctx.fillStyle = '#73BF10';
+                ctx.font = '900 32px sans-serif';
+                ctx.fillText('OCTOBER 2 & 3, 2026', w / 2, 640);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '700 28px sans-serif';
+                ctx.fillText('THE TENT AT MANDANI BAY, MANDAUE CITY', w / 2, 700);
+
+                ctx.fillStyle = '#FFA800';
+                ctx.font = '800 22px sans-serif';
+                ctx.fillText('On-Site Registration • Exclusive Wholesale Deals', w / 2, 850);
+            }, 'image/jpeg');
+        }
+
+        // Generate brand-character.png blob
+        function generateCharacterBlob() {
+            return createCanvasBlob(600, 600, (ctx, w, h) => {
+                ctx.fillStyle = '#005826';
+                ctx.beginPath();
+                ctx.arc(w / 2, h / 2, 260, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.strokeStyle = '#FFA800';
+                ctx.lineWidth = 12;
+                ctx.stroke();
+
+                ctx.fillStyle = '#FFA800';
+                ctx.font = '900 48px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('MARENG EMS', w / 2, 260);
+
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = '700 26px sans-serif';
+                ctx.fillText('Enterprising Metro Suki Partner', w / 2, 320);
+
+                ctx.fillStyle = '#73BF10';
+                ctx.font = '900 22px sans-serif';
+                ctx.fillText('BIYAHE SA KALAMPUSAN!', w / 2, 380);
+            });
+        }
+
+        // ZIP Exporter Main Function
+        async function exportWebsiteZip() {
+            const btn = document.getElementById('exportBtn');
+            const btnText = document.getElementById('exportBtnText');
+            btn.disabled = true;
+            btnText.innerText = "Building ZIP Package...";
+
+            try {
+                showToast("Generating ZIP Archive...", "Packaging HTML, images, CSS, and documentation.", "fa-spinner fa-spin");
+
+                const zip = new JSZip();
+
+                // 1. Generate PNG/JPG Image Blobs
+                const logoBlob = await generateLogoBlob();
+                const posterBlob = await generatePosterBlob();
+                const characterBlob = await generateCharacterBlob();
+
+                // Add images folder
+                const imgFolder = zip.folder("images");
+                imgFolder.file("logo.png", logoBlob);
+                imgFolder.file("poster.jpg", posterBlob);
+                imgFolder.file("brand-character.png", characterBlob);
+
+                // 2. Clone HTML without the top export bar for clean production deploy
+                const htmlClone = document.documentElement.cloneNode(true);
+                
+                // Remove the top export banner bar from exported clean HTML
+                const exportBar = htmlClone.querySelector('.sticky.top-0');
+                if (exportBar) exportBar.remove();
+
+                // Fix header sticky position back to top-0
+                const headerEl = htmlClone.querySelector('header');
+                if (headerEl) {
+                    headerEl.className = headerEl.className.replace('top-[41px]', 'top-0');
+                }
+
+                // Get clean HTML string
+                const cleanHTML = "<!DOCTYPE html>\n" + htmlClone.outerHTML;
+                zip.file("index.html", cleanHTML);
+
+                // 3. Custom CSS file for clean separation
+                const customCSS = 
+`/* Custom Poster Typography & Accent Styles */
+.font-display { font-family: 'Outfit', sans-serif; }
+
+.poster-text-green {
+    color: #005826;
+    text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff, 0 3px 6px rgba(0,0,0,0.2);
+}
+.poster-text-orange {
+    color: #FF8C00;
+    text-shadow: -1.5px -1.5px 0 #fff, 1.5px -1.5px 0 #fff, -1.5px 1.5px 0 #fff, 1.5px 1.5px 0 #fff, 0 3px 6px rgba(0,0,0,0.15);
+}
+.poster-text-yellow {
+    color: #FFA800;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff, 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.bunting-pattern {
+    background-image: repeating-linear-gradient(45deg, #005826 0 12px, #FFA800 12px 24px, #3A8A14 24px 36px, #ffffff 36px 48px);
+}
+
+@keyframes floatSlow {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+.animate-float {
+    animation: floatSlow 3.5s ease-in-out infinite;
+}
+`;
+                zip.folder("css").file("style.css", customCSS);
+
+                // 4. README documentation
+                const readmeText = 
+`# Metro Mareng EMS Caravan 2026 - Official Event Website
+
+Thank you for exporting the website bundle for **Metro Mareng EMS Caravan 2026: Biyahe sa Kalampusan!**
+
+## Directory Structure
+- \`index.html\` - Primary homepage document containing Tailwind CSS structure and scripts.
+- \`css/style.css\` - Custom poster text shadows and fiesta bunting styling.
+- \`images/logo.png\` - Brand logo graphic.
+- \`images/poster.jpg\` - Official event poster graphic.
+- \`images/brand-character.png\` - Mareng EMS character mascot artwork.
+
+## How to Host / Deploy
+1. **GitHub Pages / Netlify / Vercel:** Simply drag and drop the unzipped folder or push to your repository.
+2. **Local Web Server:** Open \`index.html\` directly in any modern browser or host using VS Code Live Server / Python HTTP server (\`python -m http.server 8000\`).
+3. **cPanel / Custom Hosting:** Upload all files directly to your \`public_html\` directory.
+
+## Replacing Assets
+Replace \`images/logo.png\`, \`images/poster.jpg\`, or \`images/brand-character.png\` with high-resolution photograph files at any time!
+`;
+                zip.file("README.md", readmeText);
+
+                // Generate ZIP file
+                const zipContent = await zip.generateAsync({ type: "blob" });
+
+                // Trigger file download
+                const downloadLink = document.createElement('a');
+                downloadLink.href = URL.createObjectURL(zipContent);
+                downloadLink.download = "metro-mareng-ems-caravan-2026.zip";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
+
+                showToast("Download Complete!", "ZIP archive downloaded successfully.", "fa-file-circle-check");
+            } catch (err) {
+                console.error(err);
+                showToast("Export Failed", "Could not package ZIP file. Please try again.", "fa-triangle-exclamation");
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = "Download Website ZIP (.zip)";
+            }
+        }
+    </script>
+</body>
+</html>
