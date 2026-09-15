@@ -102,54 +102,73 @@
 
     </div>
             
-           <!-- Brand Logo with Fallback SVG -->
-<a href="#" class="flex items-center gap-3 group">
-    <div class="h-20 flex items-center">
-        <img
-            src="MARENG EMS CARAVAN 2026 - logo kv 1a.png"
-            alt="MARENG EMS CARAVAN 2026"
-            class="h-full w-auto object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform"
-        >
-    </div>
+<header class="sticky top-[41px] z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-md">
 
-    <!-- Fallback Vector Logo -->
-    <div id="header-svg-logo" class="hidden flex items-center gap-2 bg-poster-darkgreen text-white px-3 py-1.5 rounded-xl border-2 border-poster-yellow shadow-sm">
-        <i class="fa-solid fa-store text-poster-yellow text-xl"></i>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
 
-        <div class="leading-none">
-            <span class="font-display font-black text-sm tracking-tight text-white block">
-                METRO MARENG EMS
-            </span>
-
-            <span class="text-[9px] font-extrabold text-poster-yellow tracking-widest uppercase">
-                CARAVAN 2026
-            </span>
-        </div>
-    </div>
-</a>
-            <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-extrabold text-sm text-slate-700">
-                <a href="#details" class="hover:text-poster-darkgreen transition-colors">Event Details</a>
-                <a href="#expect" class="hover:text-poster-darkgreen transition-colors">What to Expect</a>
-                <a href="#journey" class="hover:text-poster-darkgreen transition-colors">Event Journey</a>
-                <a href="#mareng-ems" class="hover:text-poster-darkgreen transition-colors">Mareng EMS</a>
-                <a href="#location" class="hover:text-poster-darkgreen transition-colors">Location</a>
-                <a href="#faq" class="hover:text-poster-darkgreen transition-colors">FAQ</a>
-            </nav>
-
-            <!-- CTA Buttons -->
-            <div class="hidden sm:flex items-center gap-3">
-                <button onclick="downloadCalendarEvent()" class="bg-gradient-to-r from-poster-yellow via-amber-400 to-poster-orange text-poster-navy px-5 py-2.5 rounded-xl font-black text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-2 border-2 border-amber-300">
-                    <i class="fa-regular fa-calendar-plus"></i>
-                    <span>Add to Calendar</span>
-                </button>
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center shrink-0">
+            <div class="h-20 flex items-center">
+                <img
+                    src="MARENG EMS CARAVAN 2026 - logo kv 1a.png"
+                    alt="MARENG EMS CARAVAN 2026"
+                    class="h-16 w-auto object-contain"
+                >
             </div>
+        </a>
 
-            <!-- Mobile Menu Toggle Button -->
-            <button onclick="toggleMobileMenu()" class="md:hidden text-slate-800 hover:text-poster-darkgreen p-2 focus:outline-none" aria-label="Toggle Navigation Menu">
-                <i class="fa-solid fa-bars text-2xl"></i>
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center justify-center gap-6 lg:gap-8 font-extrabold text-sm text-slate-700 whitespace-nowrap flex-1">
+
+            <a href="#details" class="hover:text-poster-darkgreen transition-colors">
+                Event Details
+            </a>
+
+            <a href="#expect" class="hover:text-poster-darkgreen transition-colors">
+                What to Expect
+            </a>
+
+            <a href="#journey" class="hover:text-poster-darkgreen transition-colors">
+                Event Journey
+            </a>
+
+            <a href="#mareng-ems" class="hover:text-poster-darkgreen transition-colors">
+                Mareng EMS
+            </a>
+
+            <a href="#location" class="hover:text-poster-darkgreen transition-colors">
+                Location
+            </a>
+
+            <a href="#faq" class="hover:text-poster-darkgreen transition-colors">
+                FAQ
+            </a>
+
+        </nav>
+
+        <!-- CTA -->
+        <div class="hidden sm:flex items-center shrink-0">
+            <button
+                onclick="downloadCalendarEvent()"
+                class="bg-gradient-to-r from-poster-yellow via-amber-400 to-poster-orange text-poster-navy px-5 py-2.5 rounded-xl font-black text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2 border-2 border-amber-300 whitespace-nowrap"
+            >
+                <i class="fa-regular fa-calendar-plus"></i>
+                <span>Add to Calendar</span>
             </button>
         </div>
+
+        <!-- Mobile Menu -->
+        <button
+            onclick="toggleMobileMenu()"
+            class="md:hidden text-slate-800 hover:text-poster-darkgreen p-2 focus:outline-none"
+            aria-label="Toggle Navigation Menu"
+        >
+            <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+
+    </div>
+
+    <!-- Mobile Navigation Drawer stays here -->
 
         <!-- Mobile Navigation Drawer -->
         <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl">
